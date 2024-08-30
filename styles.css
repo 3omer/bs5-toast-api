@@ -11,6 +11,7 @@ body {
 }
 
 .codes code {
+  white-space: pre;
   animation: code-in 0.5s 0.2s ease both;
 }
 
