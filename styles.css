@@ -15,7 +15,7 @@ body {
 }
 
 .codes code {
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: pre;
   animation: code-in 0.5s 0.2s ease both;
 }
