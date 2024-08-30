@@ -1,17 +1,36 @@
-# bs5-toast-api
+# Wrapper for BS5 Toast
 
 [Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/3omer/bs5-toast-api)
 
 [Github page](https://3omer.github.io/bs5-toast-api/)
 
+
+**1️⃣ First Add the container and the js code**
+
+```HTML
+<body>
+  // ...
+  // page
+  //...
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+    
+    // script
+    <script src="path/to/bs5-toast.js"></script>
+  </body>
+```
+
+**2️⃣ Initiliaze the api with Bootstrap Toast module and a refernce to the toast's container**
+
+
 ```js
-// Init the api with BS Toast module
-// and a contianer for stacking
 toast.init({
   bsToastModule: bootstrap.Toast, 
   container: document.querySelector('.toast-container'), 
 });
 ```
+
+**⭐ Use the toast's method**
 
 <img src="./images/toast-success.png"></img>
 
