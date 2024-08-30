@@ -125,10 +125,11 @@
     <!-- higlight -->
     // hljs.highlightElement(document.querySelector('#apiInitCode'), { language: 'js' })
     document.querySelector('#apiInitCode').innerHTML = hljs.highlight(`
-      // Init the api
+      // Init the api with BS Toast module
+      // and a contianer for stacking
       toast.init({
-        bsToastModule: bootstrap.Toast, // provide bootstrap's toast module
-        container: document.querySelector('.toast-container'), // provide a container for stacking
+        bsToastModule: bootstrap.Toast, 
+        container: document.querySelector('.toast-container'), 
       });
 `, { language: 'js' }).value 
   </script>
