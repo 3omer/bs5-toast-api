@@ -19,6 +19,17 @@
 
 <body class="bg-dark text-light container">
   <h2 class="my-5">API Wrapper for <i class="bi bi-bootstrap-fill"></i>ootstrap's Toast Component 🍞</h2>
+
+  <div class="d-flex gap-3 m-3 justify-content-center">
+    <h3>
+      <a title="repo" href="http://github.com/3omer/bs5-toast-api"> <i class="bi-github fs-3 text-white"></i> </a>
+    </h3>
+    <h3>
+      <a title="Bootstrap Toasts" href="https://getbootstrap.com/docs/5.3/components/toasts/#overview"> <i
+          class="bi bi-bootstrap fs-3 "></i> </a>
+    </h3>
+  </div>
+
   <div class="examples d-flex gap-3 flex-wrap">
     <button type="button" class="btn btn-success flex-grow-1 show"
       onclick="toast.success({ message: 'Request fullfiled' })"
@@ -45,8 +56,7 @@
       theme: 'text-dark bg-white fw-bold',
       iconCSS: 'bi bi-bootstrap-fill text-primary',
       duration: 2000
-      })" 
-      data-code="toast.show({ 
+      })" data-code="toast.show({ 
       message: 'I am bg-white text-dark fw-bold 🙌', 
       theme: 'text-dark bg-white fw-bold',
       iconCSS: 'bi bi-bootstrap-fill text-primary',
@@ -59,8 +69,7 @@
         autohide: false,
         theme: 'toast-custom fw-semibold',
         iconCSS: 'ph-duotone ph-rocket-launch'
-      });" 
-      data-code="toast.show({
+      });" data-code="toast.show({
         message: 'Finally! 🤩 BS 5 Toast API that I can use directly!',
         autohide: false,
         theme: 'toast-custom fw-semibold',
