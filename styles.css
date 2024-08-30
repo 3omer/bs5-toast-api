@@ -10,10 +10,16 @@ body {
   opacity: 0.2;
 }
 
+.codes {
+  width: 100%;
+}
+
 .codes code {
+  overflow-x: scroll;
   white-space: pre;
   animation: code-in 0.5s 0.2s ease both;
 }
+
 
 @keyframes code-in {
   from {
