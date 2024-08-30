@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="main.scss" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+
+  <body class="bg-dark text-light container">
+    <h2 class="my-5">API Wrapper for <i class="bi bi-bootstrap-fill"></i>ootstrap's Toast Component 🍞</h2>
+    <div class="examples d-flex gap-3 flex-wrap" style=";">
+      <button
+        type="button"
+        class="btn btn-success flex-grow-1 show"
+        onclick="toast.success({ message: 'Request fullfiled' })"
+        data-log="toast.success({ message: 'Request fullfiled' })"
+      >
+        Success
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger flex-grow-1"
+        onclick="toast.error({ message: 'Something went wrong!' })"
+        data-log="toast.error({ message: 'Something went wrong!' })"
+      >
+        Error
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary flex-grow-1"
+        onclick="toast.show({ message: 'Bootsrap primary!', duration: 2000 })"
+        data-log="toast.show({ message: 'Bootsrap primary!', duration: 2000 })"
+      >
+        Default theme
+      </button>
+
+      <button
+      type="button"
+      class="btn btn-success flex-grow-1"
+      onclick="toast.success({ message: 'Excatly', iconCSS: 'ph-duotone ph-star-four' })"
+      data-log="toast.success({ message: 'Excatly', iconCSS: 'ph-duotone ph-star-four' })"
+      >
+      <i class="ph-duotone ph-star-four"></i>
+      Bring your icon-font!
+    </button>
+    <button
+      type="button"
+      class="btn text-dark bg-white fw-bold flex-grow-1"
+      onclick="toast.show({ message: 'I am bg-white text-dark fw-bold 🙌', 
+      theme: 'text-dark bg-white fw-bold',
+      iconCSS: 'bi bi-bootstrap-fill text-primary',
+      duration: 2000
+      })"
+     data-log="toast.show({ message: 'I am bg-white text-dark fw-bold 🙌', 
+      theme: 'text-dark bg-white fw-bold',
+      iconCSS: 'bi bi-bootstrap-fill text-primary',
+      duration: 2000
+      })"
+    >
+      Or just any bootstrap's bg-{theme} text-{theme} 🙌
+    </button>
+    <button
+      type="button"
+      class="btn btn-dark fw-bold toast-custom flex-grow-1"
+      onclick="    toast.show({
+        message: 'Finally! 🤩 BS 5 Toast API that I can use directly!',
+        autohide: false,
+        theme: 'toast-custom fw-semibold',
+        iconCSS: 'ph-duotone ph-rocket-launch'
+      });"
+      data-log="    toast.show({
+        message: 'Finally! 🤩 BS 5 Toast API that I can use directly!',
+        autohide: false,
+        theme: 'toast-custom fw-semibold',
+        iconCSS: 'ph-duotone ph-rocket-launch'
+      });"
+    >
+      Or a custom class 🤩
+    </button>
+    </div>
+
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="bs5-toast.js"></script>
+    <script>
+      // Init the api
+      toast.init({
+        bsToastModule: bootstrap.Toast, // provide bootstrap's toast module
+        container: document.querySelector('.toast-container'), // provide a container for stacking
+      });
+
+
+      // enjoy
+      toast.show({
+        message: 'Finally! 🤩 BS 5 Toast API that I can use directly!',
+        autohide: true,
+        theme: 'toast-custom fw-semibold',
+        iconCSS: 'ph-duotone ph-rocket-launch'
+      });
+
+      const toastTrigger = document.getElementById('liveToastBtn');
+      const toastLiveExample = document.getElementById('liveToast');
+
+      document.body.querySelector('.examples').addEventListener('click', ev => {
+        const target = ev.target.closest('.btn');
+        if(target.tagName == 'BUTTON') {
+          console.log(`
+          ###API
+          
+          ${'```JS \n' + 
+          target.dataset.log + 
+          '\n```'}
+          `)
+          setTimeout(_ => target.nextElementSibling?.classList.add('show'), 1000)
+          
+        }
+      })
+    </script>
+  </body>
+</html>
+<!-- 
+i was working in a project and really wanted an easy light weight toast api. 
+since bs already have it i thought i can just make an abstractoin over their coponenet than npm i another-dep
+
+
+ -->
